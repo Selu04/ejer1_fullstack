@@ -38,7 +38,7 @@ export default function CreateContact(){
     }
 
     return (
-        <div className="content">
+        <div>
             <h1 >Contacto nuevo</h1>
             <form onSubmit={filtroContacto} >
                 <label>

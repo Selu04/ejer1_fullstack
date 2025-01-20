@@ -1,6 +1,7 @@
 'use client'
 import { redirect } from "next/navigation";
 import  {useState} from "react";
+import '../../../styles/estiloAgenda.css'
 
 export default function CreateContact(){
     const [contacto, setContacto] = useState({
@@ -37,12 +38,13 @@ export default function CreateContact(){
     }
 
     return (
-        <div>
-            <h1>Contacto nuevo</h1>
-            <form onSubmit={filtroContacto}>
+        <div className="content">
+            <h1 >Contacto nuevo</h1>
+            <form onSubmit={filtroContacto} >
                 <label>
                     Nombre:
                     <input
+                        className="form"
                         name="nombre"
                         type="text"
                         placeholder="Nombre"
@@ -53,6 +55,7 @@ export default function CreateContact(){
                 <label>
                     Apellidos:
                     <input
+                        className="form"
                         name="apellidos"
                         type="text"
                         placeholder="Apellido"
@@ -63,6 +66,7 @@ export default function CreateContact(){
                 <label>
                     Número de Teléfono
                     <input
+                        className="form"
                         name="telefono"
                         type="number"
                         placeholder="Teléfono"
@@ -72,8 +76,9 @@ export default function CreateContact(){
                     />
                 </label><br />
                 <label>
-                    Correo Electrónico
+                    Email
                     <input
+                        className="form"
                         name="correo"
                         type="text"
                         placeholder="Correo"
@@ -84,13 +89,14 @@ export default function CreateContact(){
                 <label>
                     Fecha de Nacimiento
                     <input
+                        className="form"
                         name="fecha_nacimiento"
                         type="date"
                         onChange={e => onChange(e)} value={contacto.fecha_nacimiento}
                         required
                     />
                 </label><br />
-                <input type="submit" value="Crear" />
+                <input type="submit" value="Crear" id="add"/>
             </form>
         </div>
     )

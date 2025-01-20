@@ -2,6 +2,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import '../../styles/estiloAgenda.css'
 
 export default function ListContact() {
     const [contacts, setContacts] = useState([]);
@@ -39,16 +40,17 @@ export default function ListContact() {
     }, []);
 
     return (
-        <div>
-          <Link href="/contact/create">Contacto nuevo</Link>
+        <div className="content">
+            <h1 id="title">Agenda</h1>
             {contacts.map((contact) => (
                 <p key={contact.id}>
                     <Link href={`/contact/${contact.id}`}>
                         {contact.nombre} - {contact.apellidos}
                     </Link>
-                    <button onClick={() => deleteContact(contact.id)}>Eliminar contacto</button>
+                    <button className="deleteButton" onClick={() => deleteContact(contact.id)}>Eliminar</button>
                 </p>
             ))}
+            <Link href="/contact/create">Contacto nuevo</Link>
         </div>
     );
 }
